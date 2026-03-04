@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PenjualanController;
+// Jobsheet 3
+use App\Http\Controllers\LevelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +40,6 @@ Route::get('/user/{id}/name/{name}', [UserController::class, 'profile']);
 |--------------------------------------------------------------------------
 */
 Route::get('/penjualan', [PenjualanController::class, 'index']);
+
+// Jobsheet 3
+Route::get('/level', [LevelController::class, 'index']);
