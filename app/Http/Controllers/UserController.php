@@ -15,15 +15,14 @@ class UserController extends Controller
 
     public function index()
     {
-        // tambah data user dengan Eloquent Model
         $data = [
-            'nama' => 'Pelanggan Pertama',
-        ];
-        
-        // update data user di mana username adalah customer-1
-        UserModel::where('username', 'customer-1')->update($data);
+            'level_id' => 2,
+            'username' => 'manager_tiga',
+            'nama' => 'Manager 3',
+            'password' => Hash::make('12345') // Pastikan untuk meng-hash
+        ];    
+        UserModel::create($data); // Menyimpan data baru ke dalam tabel m_user
 
-        // coba akses model UserModel
         $user = UserModel::all(); // ambil semua data dari tabel m_user
         return view('user', ['data' => $user]);
     }
